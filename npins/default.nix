@@ -27,7 +27,7 @@ let
       revision,
       url ? null,
       hash,
-      branch ? null,
+      branch ? "HEAD",
       ...
     }:
     assert repository ? type;
@@ -56,6 +56,7 @@ let
       builtins.fetchGit {
         url = repository.url;
         rev = revision;
+        ref = branch;
         inherit name;
         narHash = hash;
       };
