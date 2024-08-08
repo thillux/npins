@@ -66,7 +66,7 @@ let
         ref = branch;
         rev = revision;
         inherit name;
-        # hash = hash;
+        narHash = hash;
         inherit url submodules;
       };
 
